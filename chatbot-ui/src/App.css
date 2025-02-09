@@ -1,0 +1,263 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #111827;
+}
+
+/* App container - takes full viewport */
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  padding: 30px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: #111827;
+}
+
+/* Main chat container */
+.chat-container {
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #1F2937;
+}
+
+/* Header styles */
+.chat-header {
+  background-color: #000000;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header h1 {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Messages container */
+.messages-container {
+  flex: 1;
+  overflow: hidden;
+  padding: 1rem;
+  background-color: #1F2937;
+  border-radius: 20px;
+}
+
+/* Chat box with messages */
+.chat-box {
+  height: 100%;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Scrollbar styling */
+.chat-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+  background: #1F2937;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: #4B5563;
+  border-radius: 3px;
+}
+.message {
+  max-width: 80%;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  margin: 0.5rem 0;
+}
+
+.user-message {
+  background-color: #374151;
+  color: #FFFFFF;
+  align-self: flex-end;
+  border-bottom-right-radius: 0.25rem;
+  margin-left: auto;
+}
+
+.bot-message {
+  background-color: #4B5563;
+  color: #F3F4F6;
+  align-self: flex-start;
+  border-bottom-left-radius: 0.25rem;
+  margin-right: auto;
+}
+
+/* Input area styles */
+.input-wrapper {
+  padding: 1rem;
+  background-color: #1F2937;
+  border-top: 1px solid #374151;
+}
+
+.input-container {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Input field styles */
+input[type="text"] {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #374151;
+  background-color: #374151;
+  color: #FFFFFF;
+  font-size: 1rem;
+}
+
+input[type="text"]::placeholder {
+  color: #9CA3AF;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #6B7280;
+}
+
+/* Button styles */
+button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #374151;
+  color: #FFFFFF;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+}
+
+button:hover:not(:disabled) {
+  background-color: #4B5563;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Loading animations */
+.loading-dots {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #E5E7EB;
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #E5E7EB;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .chat-container {
+    height: 100vh;
+  }
+
+  .message {
+    max-width: 85%;
+  }
+
+  .input-wrapper {
+    padding: 0.75rem;
+  }
+
+  button {
+    padding: 0.75rem 1rem;
+  }
+}
+
+
+
+.message-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.message-sender {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+.message-text {
+  word-break: break-word;
+}
+
+
+.chat-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 1rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.messages-container {
+  flex: 1;
+  overflow: hidden;
+  background-color: #1F2937;
+}

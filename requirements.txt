@@ -1,0 +1,6 @@
+langchain
+langchain_community
+python-dotenv
+crewai_tools
+sqlite3
+ollama
