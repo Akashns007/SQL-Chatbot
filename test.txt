@@ -1,0 +1,1 @@
+sql chatbot made from local llm model called mistral using ollama
